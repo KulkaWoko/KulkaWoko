@@ -1,0 +1,93 @@
+﻿<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+ 
+    <title>Rowerowy.pl</title>
+    <script type="text/javascript" src="Button_Change.js"></script>
+    <script type="text/javascript" src="Text_Slider.js"></script>
+    <script type="text/javascript" src="Clock.js"></script>
+    <script type="text/javascript" src="Timer.js"></script>
+    <style>
+        section.javaScript {
+            width: 100%;
+            margin: 0px;
+            padding: 0px;
+            background-color: rgb(255, 255, 255);
+        }
+
+        #java1 div.unpressed {
+            background-image: url("unpressed.png");
+            background-repeat: no-repeat;
+            width: 180px;
+            height: 40px;
+            color: darkblue;
+            text-align: center;
+            padding-top: 10px;
+            font-weight: bold;
+        }
+
+        #java1 div.pressed {
+            background-image: url("pressed.png");
+            background-repeat: no-repeat;
+            width: 180px;
+            height: 40px;
+            color: lightblue;
+            text-align: center;
+            padding-top: 10px;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body onload="startclock(); starttimer();">
+   
+    <section class="javaScript" id="java2">
+        <h2>Informacje lokalne</h2>
+        Godzina:<br />
+        <input type="text" id="clock" value="00:00:00" 
+               style="background:none; border:none;
+                      font-weight:normal; text-align:left; font-size: large;" />
+        <br />
+
+        <div>
+            <script defer src="index.js"></script>
+         <link rel="stylesheet" href="styles.css">
+         </head>
+
+         <body>
+             <br />
+        
+                <a>Liczba kliknięć:</a> 
+                <br />
+                <div class="website-counter"; type="text"; text-align:left></div>
+            
+            <script>
+                var counterContainer = document.querySelector(".website-counter");
+                var resetButton = document.querySelector("#reset");
+                var visitCount = localStorage.getItem("page_view");
+    
+                if (visitCount) {
+                    visitCount = Number(visitCount) + 1;
+                    localStorage.setItem("page_view", visitCount);
+                } else {
+                    visitCount = 1;
+                    localStorage.setItem("page_view", 1);
+                }
+                counterContainer.innerHTML = visitCount;
+            </script>
+
+            <br /> 
+        <a>Data:</a> <br />
+        <div id="current_date" style="text-align:left; font-weight: normal; font-size: large;" >
+            <script>
+            date = new Date();
+            year = date.getFullYear();
+            month = date.getMonth() + 1;
+            day = date.getDate();
+            document.getElementById("current_date").innerHTML = day + "." + month + "." + year;
+            </script>
+    
+    </section>
+</body>
+</html>
